@@ -1,5 +1,9 @@
 import streamlit
 import pandas as pd
+import requests
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+
 # restaurant menu
 streamlit.title('Our New Healthy Diner')
 
@@ -21,3 +25,5 @@ remaining_fruits = my_fruit_list.drop(fruits_selected, errors='ignore')
 
 # display the entire dataframe excluding selected fruits
 streamlit.dataframe(remaining_fruits)
+
+streamlit.text(fruityvice_response)
