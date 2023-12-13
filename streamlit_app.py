@@ -33,4 +33,4 @@ streamlit.text(fruit_response.json())
 
 
 
-streamlit.text(fruityvice_response)
+streamlit.text(fruity_response)
