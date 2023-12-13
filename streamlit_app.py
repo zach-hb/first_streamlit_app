@@ -29,8 +29,8 @@ streamlit.dataframe(remaining_fruits)
 # new section for fruityvice api response
 streamlit.header ('Fruityvice Fruit Advice!')
 
-frui_response = request.get('https://fruityvice.com/api/fruit/watermelon')
-streamlit.text(fruityvice_response.json())
+fruit_response = request.get('https://fruityvice.com/api/fruit/watermelon')
+streamlit.text(fruit_response.json())
 
 
 
