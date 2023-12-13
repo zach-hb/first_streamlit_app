@@ -17,5 +17,9 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 # pick list so user can pick fruit they want
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
+# filter out selected fruits
+fruits_selected = streamlit.multiselect('Pick some fruits:', list(my_fruit_list.index))
+fruits_to_show = my_fruit_list.loc[fruits_selected]
+
 # display df on page
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruits_to_show)
