@@ -17,7 +17,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 # pick list so user can pick fruit they want
 fruits_selected = streamlit.multiselect('Pick some fruits:', list(my_fruit_list.index))
 # filter out selected fruits
-fruits_to_show = my_fruit_list.loc[fruits_selected]
+remaining_fruits = my_fruit_list.drop(fruits_selected, errors='ignore')
 
-# display df on page
-streamlit.dataframe(fruits_to_show)
+# display the entire dataframe excluding selected fruits
+streamlit.dataframe(remaining_fruits)
