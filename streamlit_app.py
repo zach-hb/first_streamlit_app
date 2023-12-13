@@ -26,4 +26,13 @@ remaining_fruits = my_fruit_list.drop(fruits_selected, errors='ignore')
 # display the entire dataframe excluding selected fruits
 streamlit.dataframe(remaining_fruits)
 
+# new section for fruityvice api response
+streamlit.header ('Fruityvice Fruit Advice!')
+
+frui_response = request.get('https://fruityvice.com/api/fruit/watermelon')
+streamlit.text(fruityvice_response.json())
+
+
+
+
 streamlit.text(fruityvice_response)
